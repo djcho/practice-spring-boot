@@ -1,1 +1,1 @@
-# study-spring-boot
+# practice-spring-boot
