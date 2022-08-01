@@ -3,11 +3,14 @@ package com.springboot.advanced_jpa.controller;
 import com.springboot.advanced_jpa.data.dto.ChangeProductNameDto;
 import com.springboot.advanced_jpa.data.dto.ProductDto;
 import com.springboot.advanced_jpa.data.dto.ProductResponseDto;
+import com.springboot.advanced_jpa.data.entity.Product;
 import com.springboot.advanced_jpa.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/product")
@@ -23,6 +26,14 @@ public class ProductController {
     @GetMapping()
     public ResponseEntity<ProductResponseDto> getProduct(Long number){
         ProductResponseDto productResponseDto = productService.getProduct(number);
+
+        return ResponseEntity.status(HttpStatus.OK).body(productResponseDto);
+    }
+
+    @GetMapping(path = "/products")
+    public ResponseEntity<ProductResponseDto> getProducts(){
+        ProductResponseDto productResponseDto = new ProductResponseDto();
+        List<Product> list = productService.getProductListByName("");
 
         return ResponseEntity.status(HttpStatus.OK).body(productResponseDto);
     }

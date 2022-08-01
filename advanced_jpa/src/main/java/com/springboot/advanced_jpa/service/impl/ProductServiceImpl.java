@@ -84,6 +84,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getProductListByName(String name) {
-        return productRepository.findByNameOrderByNumberDesc(name);
+        return productRepository.findByNameOrderByPriceAscStockDesc(name);
     }
 }
