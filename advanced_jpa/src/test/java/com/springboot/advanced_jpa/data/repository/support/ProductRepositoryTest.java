@@ -1,6 +1,7 @@
 package com.springboot.advanced_jpa.data.repository.support;
 
 import com.springboot.advanced_jpa.data.entity.Product;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,6 +12,7 @@ public class ProductRepositoryTest {
     ProductRepository productRepository;
 
     @Test
+    @Disabled
     void findByNameTest() {
         List<Product> productList = productRepository.findByName("펜");
 
