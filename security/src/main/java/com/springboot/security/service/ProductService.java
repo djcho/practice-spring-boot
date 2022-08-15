@@ -1,7 +1,7 @@
 package com.springboot.security.service;
 
-import com.springboot.test.data.dto.ProductDto;
-import com.springboot.test.data.dto.ProductResponseDto;
+import com.springboot.security.data.dto.ProductDto;
+import com.springboot.security.data.dto.ProductResponseDto;
 
 public interface ProductService {
 
