@@ -40,7 +40,7 @@ public class SignServiceImpl implements SignService {
             user = User.builder()
                     .uid(id)
                     .name(name)
-                    .password(password)
+                    .password(passwordEncoder.encode(password))
                     .roles(Collections.singletonList("ROLE_ADMIN"))
                     .build();
         }else {
